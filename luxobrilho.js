@@ -16,7 +16,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/luxobrilho',
 
 const UsuarioSchema = new mongoose.Schema({
     email : {type : String, required : true},
-    senha : { type : String, required : true}
+    senha : { type : String}
 });
 
 const Usuario = mongoose.model("Usuário", UsuarioSchema);
@@ -24,17 +24,6 @@ const Usuario = mongoose.model("Usuário", UsuarioSchema);
 app.post("/cadastrousuario", async(req, res)=>{
     const email = req.body.email;
     const senha = req.body.senha
-
-    if(email == null || senha == null){
-        return res.status(400).json({error : "Preenchar todos os campos!!!"});
-    } 
-
-    const emailExiste = await Usuario.findOne({email:email});
-
-    if(emailExiste){
-        return res.status(400).json({error : "O email informado já existe."});
-    }
-
 
     const usuario = new Usuario({
         email : email,
@@ -50,36 +39,24 @@ app.post("/cadastrousuario", async(req, res)=>{
 
 });
 
-const produtojoiaSchema = new mongoose.Schema({
+const ProdutojoiaSchema = new mongoose.Schema({
     id_produtojoia : {type : Number, required : true},
-    descricao : {type : String, required : true},
-    cor : {type : String, required : true},
-    data_lapidacao: {type : Date, required : true},
-    quant_estoque : {type : Number, required : true}
+    descricao : {type : String},
+    cor : {type : String},
+    data_lapidacao: {type : Date},
+    quant_estoque : {type : Number}
 });
 
 
-const produtojoia = mongoose.model("ProdutoJoia", produtojoiaSchema);
-app.post("/produtojoia", async(req, res)=>{
+const Produtojoia = mongoose.model("ProdutoJoia", ProdutojoiaSchema);
+app.post("/cadastroprodutojoia", async(req, res)=>{
     const id_produtojoia = req.body.id_produtojoia;
     const descricao = req.body.descricao;
     const cor = req.body.cor;
     const data_lapidacao = req.body.data_lapidacao;
     const quant_estoque = req.body.quant_estoque;
 
-
-
-    if(id_produtojoia == null || descricao == null || cor == null || data_lapidacao == null || quant_estoque == null){
-        return res.status(400).json({error : "Preencher todos os campos"});
-    } 
-
-    const id_produtojoiaEx = await produtojoia.findOne({id_produtojoia: id_produtojoia});
- 
-    if(id_produtojoiaEx){
-        return res.status(400).json({error : "Esse id já está registrado no sistema."});
-    }
-
-    const produtojoia = new Usuario({
+    const produtojoia = new Produtojoia({
         id_produtojoia : id_produtojoia,
         descricao : descricao,
         cor : cor,
@@ -89,8 +66,8 @@ app.post("/produtojoia", async(req, res)=>{
 
 
     try{
-        const newprodutojoia = await produtojoia.save();
-        res.json({error : null, msg : "Cadastro ok", usuarioId : new Usuario._id});
+        const newProdutojoia = await produtojoia.save();
+        res.json({error : null, msg : "Cadastro ok", usuarioId : newProdutojoia._id});
     } catch(error){
         res.status(400).json({error});
     }
