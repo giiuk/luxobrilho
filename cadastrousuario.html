@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxo e Brilho</title>
+<!-- Inclua a biblioteca Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <div class="bg-danger">
+        <br>
+    <div class="container text-center mt-3">
+     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+        <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"/>
+      </svg>  
+      </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container">
+        <a class="navbar-brand" href="/">Luxo e Brilho</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="/">Página Inicial</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/cadastroprodutojoia">Cadastro produto</a>
+        
+        </ul>
+        </div>
+        </div>
+        </nav>
+        </div>
+    
+ 
+ 
+    <!-- Cabeçalho -->
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Cadastrar
+                    </div>
+                    <div class="card-body">
+                        <form action="/cadastrousuario" method="post">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha:</label>
+                                <input type="password" class="form-control" id="senha" name="senha" required>
+                            </div>
+                            <center>
+                                <button type="submit" class="btn btn-danger">Entrar</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <footer class="bg-white text-center text-white">
+
+        <div class="container p-4 pb-0">
+    
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+          <div class="icones">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+          <br>
+    
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          <a class="text-white" href="https://mdbootstrap.com/"> Av. Lins de Vasconcelos, 1222 - Aclimação, São Paulo - SP, 01538-001</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    
+      <style>
+        
+        .fa-facebook{
+            background-color: #dd0e0e;
+        }
+    
+        .fa-twitter{
+        background-color: #dd0e0e;
+        }
+        .fa-instagram{
+            background-color: #dd0e0e;
+        }
+    
+        .icones i {
+            font-size: 20px; 
+            border-radius: 50%; 
+            padding: 10px; 
+            color: white; 
+            margin: 5px; 
+        }
+    
+        </style>
+     
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+     
+    </html>

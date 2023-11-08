@@ -30,6 +30,17 @@ app.post("/cadastrousuario", async(req, res)=>{
         senha : senha
     })
 
+    if(email == null || senha == null){
+        return res.status(400).json({error : "Preencher todos os campos!!"});
+    }
+
+    const emailExiste = await Usuario.findOne({email:email});
+
+    if(emailExiste){
+        return res.status(400).json({error : "Esse email já existe!"});
+    }
+ 
+
     try{
         const newUsuario = await usuario.save();
         res.json({error : null, msg : "Cadastro ok", usuarioId : newUsuario._id});
@@ -38,6 +49,8 @@ app.post("/cadastrousuario", async(req, res)=>{
     }
 
 });
+
+
 
 const ProdutojoiaSchema = new mongoose.Schema({
     id_produtojoia : {type : Number, required : true},
@@ -64,6 +77,26 @@ app.post("/cadastroprodutojoia", async(req, res)=>{
         quant_estoque : quant_estoque
     })
 
+    if(quant_estoque > 43){
+        return res.status(400).json({error : "O limite de estoque foi superado. Não é possivel cadastrar o produto!"});
+    }
+    if(anos_garantia <= 0){
+        return res.status(400).json({error : "Solicitamos um valor positivo."});
+    }
+
+    
+    if(produtojoia == null || descricao == null || cor == null || data_lapidacao == null || quant_estoque == null){
+        return res.status(400).json({error : "Preencher todos os campo!"});
+    }
+ 
+    
+    const id_produtojoiaEx = await Produtojoia.findOne({id_produtojoia : id_produtojoia});
+ 
+    if(id_produtojoiaEx){
+        return res.status(400).json({error : "Esse id já foi registrado no sistema."});
+    }
+
+
 
     try{
         const newProdutojoia = await produtojoia.save();
@@ -74,10 +107,19 @@ app.post("/cadastroprodutojoia", async(req, res)=>{
 
 });
 
-app.listen(port, ()=>{
-    console.log(`Servidor rodando na porta ${port}`);
+app.get("/cadastrousuario", async(req, res)=> {
+    res.sendFile(__dirname+"/cadastrousuario.html");
 });
 
+app.get("/cadastroprodutojoia", async(req, res)=> {
+    res.sendFile(__dirname+"/cadastroprodutojoia.html");
+});
+
+//rota raiz - inicio do inw por causa da pág html
 app.get("/", async(req, res)=>{
     res.sendFile(__dirname +"/index.html");
+});
+
+app.listen(port, ()=>{
+    console.log(`Servidor rodando na porta ${port}`);
 });

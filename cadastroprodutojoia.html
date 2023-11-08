@@ -8,8 +8,8 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
- 
 <body>
+ 
 
     <div class="bg-danger">
         <br>
@@ -29,10 +29,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-        <a class="nav-link" href="/cadastrousuario">Entrar</a>
+        <a class="nav-link" href="/">Página Inicial</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/cadastroprodutojoia">Cadastro produto</a>
+        <a class="nav-link" href="/cadastrousuario">Entrar</a>
         
         </ul>
         </div>
@@ -40,41 +40,49 @@
         </nav>
         </div>
     
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-<ol class="carousel-indicators">
-<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-</ol>
-<div class="carousel-inner">
-<div class="carousel-item active">
-<img src="https://www.kantilalchhotalal.com/wp-content/uploads/2016/10/necklace-banner.png" class="d-block w-100" alt="Imagem 1">
-</div>
-<div class="carousel-item">
-<img src="https://www.kantilalchhotalal.com/wp-content/uploads/2016/10/bridal-banner-min.png" class="d-block w-100" alt="Imagem 2">
-</div>
-<div class="carousel-item">
-<img src="https://www.kantilalchhotalal.com/wp-content/uploads/2016/09/earring-banner-1024x513.png" class="d-block w-100" alt="Imagem 3">
-</div>
-</div>
-<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-<span class="sr-only">Anterior</span>
-</a>
-<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-<span class="carousel-control-next-icon" aria-hidden="true"></span>
-<span class="sr-only">Próximo</span>
-</a>
-</div>
+
  
-    
 <div class="container mt-5">
-<h2 class="text-center">Bem-vindo(a) à nossa loja</h2>
-<p class="text-center">A loja Luxo e Brilho é conhecida por sua coleção diversificada de joias, que inclui anéis, colares, brincos e pulseiras, todos meticulosamente trabalhados com os materiais mais finos, como diamantes, rubis, esmeraldas e safiras. Cada peça é um exemplo de artesanato de alta qualidade, incorporando designs elegantes e contemporâneos, bem como estilos clássicos que atendem a uma ampla gama de gostos.</p>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Cadastrar Produto
+                </div>
+                    </div>
+                <div class="card-body">
+                    <form action="/cadastroprodutojoia" method="post">
+                        <div class="form-group">
+                            <label for="id_produtojoia">Id do produto:</label>
+                            <input type="number" class="form-control" id="id_produtojoia" name="">
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição:</label>
+                            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição" >
+                        </div>
+                        <div class="form-group">
+                            <label for="marca">Cor:</label>
+                            <input type="text" class="form-control" id="cor" name="cor" placeholder="Cor">
+                        </div>
+                        <div class="form-group">
+                            <label for="data_lapidacao">Data de Lapidação:</label>
+                            <input type="date" class="form-control" id="data_lapidacao" name="data_lapidacao" placeholder="Data de Lapidação">
+                        </div>
+                        <div class="form-group">
+                            <label for="anos_garantia">Quantidade estoque:</label>
+                            <input type="number" class="form-control" id="quant_estoque" name="quant_estoque" placeholder="Quantidade Estoque:">
+                        </div>
+                        <center>
+                            <button type="submit" class="btn btn-danger">Cadastrar</button>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<br>
-<hr>
- 
+    
+      
 <footer class="bg-white text-center text-white">
 
     <div class="container p-4 pb-0">
@@ -87,8 +95,8 @@
       </div>
       <br>
 
-
-   
+  
+ 
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       <a class="text-white" href="https://mdbootstrap.com/"> Av. Lins de Vasconcelos, 1222 - Aclimação, São Paulo - SP, 01538-001</a>
     </div>
